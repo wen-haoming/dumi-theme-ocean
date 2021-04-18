@@ -1,0 +1,29 @@
+{
+    "name": "dumi-theme-ocean",
+    "version": "0.01",
+    "description": "dumi-theme-ocean",
+    "files": [
+      "es",
+      "src"
+    ],
+    "sideEffects": [
+      "./**/*.less"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/wen-haoming/dumi-theme-ocean",
+      "directory": "dumi-theme-default"
+    },
+    "homepage": "https://github.com/wen-haoming/dumi-theme-ocean",
+    "bugs": "https://github.com/wen-haoming/dumi-theme-ocean/issues",
+    "authors": [],
+    "dependencies": {
+    },
+    "devDependencies": {
+    },
+    "peerDependencies": {
+      "@umijs/preset-dumi": "1.x",
+      "react": "^16.13.1"
+    },
+    "license": "MIT"
+  }
