@@ -20,7 +20,9 @@
     "wen-haoming <435203093@qq.com> (https://github.com/wen-haoming)"
   ],
   "dependencies": {
-    "antd": "^4.15.1"
+    "@icon-park/react": "^1.3.3",
+    "antd": "^4.15.1",
+    "gsap": "^3.6.1"
   },
   "devDependencies": {
     "dumi": "1.1.13",
