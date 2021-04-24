@@ -27,7 +27,7 @@ const LayoutContent: React.FC<IRouteComponentProps> = ({
         <>
             <Nav {...props}/>
             <main className="main">
-                <Content/>
+                <Content {...props}/>
             </main>
             <HomeFooter />
         </>

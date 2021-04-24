@@ -7,7 +7,7 @@ const Categories = ()=>{
         <div className="categories">
             <Space className="item-wrap">
                 <div className="item">blog</div>
-                <div className="item">blog2</div>
+                <div className="item">blog1232</div>
             </Space>
         </div>
     </>
