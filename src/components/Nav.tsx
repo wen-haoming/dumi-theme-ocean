@@ -1,58 +1,19 @@
-import React, { memo, useEffect } from 'react'
-import { Row, Col, Space } from 'antd'
-import { Link, useHistory, IRouteComponentProps } from 'umi'
-import Icon, { HomeOutlined, FolderOpenOutlined, AppstoreOutlined, SmileOutlined } from '@ant-design/icons'
-import { Time } from '@icon-park/react'
-import HoverButton from '../utils/btn'
+import React, { memo } from 'react'
+import { IRouteComponentProps } from 'umi'
+import movielines from './data/movielines'
 
-const menusArr = [
-    {
-        icon: HomeOutlined,
-        text: '首页',
-        link: '/'
-    },
-    {
-        icon: AppstoreOutlined,
-        text: '分类',
-        link: '/categories'
-    },
-    {
-        icon: () => <Time size="14" strokeWidth={5} />,
-        text: '时间线',
-        link: '/timeline'
-    }, {
-        icon: SmileOutlined,
-        text: '关于',
-        link: '/about'
-    }
-]
+const Nav: React.FC<Omit<IRouteComponentProps, 'children'>> = (props) => {
 
+    let randomMovielines = movielines[Math.floor(Math.random() * movielines.length)]
 
-const Nav: React.FC<Omit<IRouteComponentProps,'children'>> = (props) => {
-
-    const history = useHistory()
-
-
-
-    return <header className={props.location.pathname === '/' ?'header img':'header'}>
-    <nav className='nav'>
-        <Row className='nav-wrap'>
-            <Col className='nav-brand'>brand</Col>
-            <Col className='nav-menus' xs={0} sm={0} md={10} lg={10} xl={10} >
-                {menusArr.map((item, key) => <Space className='nav-item' key={key}>
-                    <div onClick={() => history.push(item.link)}>
-                        {<item.icon />}
-                        <span>{item.text}</span>
-                    </div>
-                </Space>)}
-            </Col>
-            <Col className='nav-menus' xs={10} sm={10} md={0} lg={0} xl={0} >
-                {/*  */}
-            </Col>
-        </Row>
-    </nav>
-    </header >
-
+    return <>
+        <nav className="nav">
+            {!props.match.isExact ? <> <div className="sentence">{randomMovielines.saying}</div> <div className="from">———{randomMovielines.from}</div></> :<> <div className="home-name">HAOMING-WEN</div> <div className="home-subsentence">Whatever the mind can conceive and believe, the mind can achieve. <div>（只要你能想到、能相信, 你就能做到。）</div> </div></> }
+        </nav>
+        { props.match.isExact && <header className="header">
+            <h1>Writing</h1>
+        </header>}
+    </>
 }
 
 export default memo(Nav)

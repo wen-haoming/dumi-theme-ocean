@@ -1,11 +1,12 @@
-import React, { memo, useMemo } from 'react';
-import './style/layout.less';
 import { IRouteComponentProps } from 'dumi';
 import 'nprogress/nprogress.css';
-import Nav from './components/Nav'
-import HomeContent from './components/HomeContent'
-import HomeFooter from './components/HomeFooter'
-import Categories from './pages/Categories'
+import React, { memo, useMemo } from 'react';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import HomeContent from './components/HomeContent';
+import Nav from './components/Nav';
+import './style/layout.less';
+
 
 const LayoutContent: React.FC<IRouteComponentProps> = ({
     children,
@@ -15,9 +16,7 @@ const LayoutContent: React.FC<IRouteComponentProps> = ({
  const Content =  useMemo(()=>{
     switch (props.location.pathname) {
         case '/':
-            return HomeContent
-        case '/categories':
-            return Categories
+            return Home
         default:
             return HomeContent
     }
@@ -27,9 +26,9 @@ const LayoutContent: React.FC<IRouteComponentProps> = ({
         <>
             <Nav {...props}/>
             <main className="main">
-                <Content {...props}/>
+                <Content {...props} >{children}</Content>
             </main>
-            <HomeFooter />
+            <Footer {...props} />
         </>
     )
 };
