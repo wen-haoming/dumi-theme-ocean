@@ -22,6 +22,7 @@ body,
     margin: 0;
     background-color: #fff;
     width: 100%;
+    height: 100%;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     box-sizing: border-box;
     font-size: 16px;
@@ -32,6 +33,16 @@ body,
 .nav,.header,.main,.footer,.footer-nav{
     max-width: 630px;
     margin: 0 auto;
+}
+@media screen and (min-height:667px){
+    .main{
+        min-height: calc(100vh - 45vh);
+    }
+}
+@media screen and (max-height:667px){
+    .main{
+        min-height: calc(100vh - 63vh);
+    }
 }
 
 .footer{
@@ -58,7 +69,7 @@ body,
 
 @media screen and (min-width:750px) {
     .nav {
-        padding: 100px 0px 100px 10px;
+        padding: 5vh 0px 5vh 0px;
         .sentence {
             font-weight: 700;
             padding-right: 7px;
@@ -85,11 +96,10 @@ body,
 
     .header {
         font-size: 48px;
-        padding-bottom: 100px;
+        padding-bottom: 10vh;
     }
 
     .main {
-        padding-bottom: 5rem;
         .list {
             .list-item {
                 padding: 10px;
@@ -133,7 +143,7 @@ body,
     }
 
     .nav {
-        padding: 50px 0px 50px 10px;
+        padding: 5vh 0px 5vh 0px;
         .sentence {
             font-weight: 700;
             font-size: 14px;
@@ -160,17 +170,15 @@ body,
 
     .header {
         font-size: 27px;
-        padding-bottom: 30px;
+        padding-bottom: 10vh;
     }
 
     .main {
-        padding-bottom: 5rem;
         .list {
             .list-item {
                 padding: 16px;
                 box-sizing: border-box;
                 cursor: pointer;
-
                 .item-update {
                     color: var(--sec-text-color);
                     font-size: 10px;
